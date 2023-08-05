@@ -2,10 +2,16 @@ import { useDispatch } from 'react-redux';
 import { Ul, Li, Text } from './ContactList.styled';
 import { deleteContact } from 'components/Redux/contactsSlice';
 import { useSelector } from 'react-redux';
-import { selectVisibleContacts } from 'components/Redux/selectors';
+import {
+  selectFilter,
+  selectVisibleContacts,
+} from 'components/Redux/selectors';
 export const ContactList = () => {
   const dispatch = useDispatch();
+
   const contacts = useSelector(selectVisibleContacts);
+  console.log(useSelector(selectVisibleContacts));
+  console.log(useSelector(selectFilter));
 
   return (
     <Ul>
